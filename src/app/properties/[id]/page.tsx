@@ -1,4 +1,5 @@
-
-export default function PropertyDetails({ params }: { params: { id: string } }) {
-  return <div>Property Details for ID: {params.id} (Placeholder)</div>;
-}
+export default async function PropertyDetails({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+  
+    return <div>Property Details for ID: {id} (Placeholder)</div>;
+  }
